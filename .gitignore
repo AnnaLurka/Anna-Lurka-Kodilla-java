@@ -32,4 +32,4 @@ out/
 .vscode/
 
 **/out/ **/build/
-/kodilla-testing/src/test/java/
+
