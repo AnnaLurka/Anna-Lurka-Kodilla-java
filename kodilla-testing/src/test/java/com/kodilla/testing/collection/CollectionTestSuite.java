@@ -25,7 +25,7 @@ public class CollectionTestSuite {
         System.out.println("Testing " + result1);
 
         //Then
-        Assert.assertEquals([], result1); //???
+        Assert.assertEquals(emptyList, result1);
     }
 
     @Test
@@ -46,6 +46,6 @@ public class CollectionTestSuite {
         System.out.println("Testing " + result2);
 
         //Then
-        Assert.assertEquals([2,4,6,8], result2); //???
+        Assert.assertEquals(normalList, result2);
     }
 }
