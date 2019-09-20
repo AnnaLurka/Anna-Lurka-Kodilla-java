@@ -21,7 +21,8 @@ public class CollectionTestSuite {
         ArrayList<Integer> emptyList = new ArrayList<Integer>();
 
         //When
-        ArrayList<Integer> result1 = emptyList.exterminate();
+        OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
+        ArrayList<Integer> result1 = oddNumbersExterminator.exterminate(emptyList);
         System.out.println("Testing " + result1);
 
         //Then
@@ -42,7 +43,9 @@ public class CollectionTestSuite {
         normalList.add(8);
 
         //When
-        ArrayList<Integer> result2 = normalList.exterminate();
+
+        OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
+        ArrayList<Integer> result2 = oddNumbersExterminator.exterminate(normalList);
         System.out.println("Testing " + result2);
 
         //Then
