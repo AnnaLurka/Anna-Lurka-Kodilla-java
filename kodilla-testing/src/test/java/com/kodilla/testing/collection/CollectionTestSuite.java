@@ -49,6 +49,6 @@ public class CollectionTestSuite {
         System.out.println("Testing " + result2);
 
         //Then
-        Assert.assertEquals(normalList, result2);
+        Assert.assertEquals(even, result2);
     }
 }
