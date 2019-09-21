@@ -49,9 +49,12 @@ public class CollectionTestSuite {
         System.out.println("Testing " + result2);
 
         //Then
-        Integer[] expectedResult = {2,4,6,8};
-      //Integer [] expectedResult = new Integer [] {2, 4, 6, 8};
-       //ArrayList<Integer> expectedResult = new ArrayList<Integer>[2,4,6,8];
+        ArrayList<Integer> expectedResult = new ArrayList<Integer>();
+        expectedResult.add(2);
+        expectedResult.add(4);
+        expectedResult.add(6);
+        expectedResult.add(8);
+
         Assert.assertEquals(expectedResult, result2);
     }
 }
