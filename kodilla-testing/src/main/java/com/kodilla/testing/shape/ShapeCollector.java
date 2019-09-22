@@ -4,15 +4,9 @@ import java.util.ArrayList;
 
 public class ShapeCollector {
 
-    private Shape shape;
     ArrayList<Shape> shapes = new ArrayList<Shape>();
 
-    public ShapeCollector(Shape shape) {
-        this.shape = shape;
-    }
-
     public void addFigure(Shape shape){
-        //chciałam tu utworzyć nowy shape ale wiem, że do Interfejsu nie używamy operatora new.
         shapes.add(shape);
     }
 
@@ -34,9 +28,9 @@ public class ShapeCollector {
     }
 
     public void showFigures(){
-       // ??
-
-
+        for (Shape shape : shapes){
+            System.out.println(shape);
+        }
     }
     public int getShapesQuantity(){
         return shapes.size();

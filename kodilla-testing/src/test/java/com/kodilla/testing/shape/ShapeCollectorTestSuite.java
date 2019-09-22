@@ -83,22 +83,4 @@ public class ShapeCollectorTestSuite {
         //Then
         Assert.assertEquals(circle, retrievedFigure);
     }
-
-    public void testShowFigures(){
-        //nie rozumiem za bardzo co ma robić ta metoda-ma je pokazywać narysowane?
-        ArrayList<Shape> shapes = new ArrayList<Shape>();
-        Triangle triangle = new Triangle();
-        Circle circle = new Circle();
-        Square square = new Square();
-
-        shapes.addFigure(triangle);
-        shapes.addFigure(circle);
-        shapes.addFigure(square);
-
-        //When
-        shapes.showFigure();
-
-        //Then
-        //??
-    }
 }
