@@ -23,6 +23,7 @@ public class StatisticsCalculator{
         double aveCommentsPerUser = commentsCount/numberOfUsers;
         double aveCommentsPerPost = commentsCount/postsCount;
 
+
         resultList.add(numberOfUsers);
         resultList.add(postsCount);
         resultList.add(commentsCount);
