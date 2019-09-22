@@ -6,19 +6,13 @@ import java.util.List;
 
 public class StatisticsCalculator{
 
-    Statistics statistics;
+    public ArrayList<Double> calculateAdvStatistics(Statistics statistics){
 
-    public StatisticsCalculator(Statistics statistics) {
-        this.statistics = statistics;
-    }
+        ArrayList<Double> resultList = new ArrayList<Double>();
 
-    public ArrayList<Statistics> calculateAdvStatistics(Statistics statistics){
-
-        ArrayList<Statistics> resultList = new ArrayList<Statistics>();
-
-        int numberOfUsers = statistics.usersNames().size();
-        int postsCount = statistics.postsCount();
-        int commentsCount = statistics.commentsCount();
+        double numberOfUsers = statistics.usersNames().size();
+        double postsCount = statistics.postsCount();
+        double commentsCount = statistics.commentsCount();
         double avePostsPerUser = postsCount/numberOfUsers;
         double aveCommentsPerUser = commentsCount/numberOfUsers;
         double aveCommentsPerPost = commentsCount/postsCount;
