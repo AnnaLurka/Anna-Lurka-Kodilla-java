@@ -29,7 +29,7 @@ public class ShapeCollectorTestSuite {
     @Test
     public void testAddFigure(){
         //Given
-        ArrayList<Shape> shapes = new ArrayList<Shape>();
+        ShapeCollector shapes = new ShapeCollector();
         Triangle triangle = new Triangle();
         Circle circle = new Circle();
         Square square = new Square();
@@ -47,7 +47,7 @@ public class ShapeCollectorTestSuite {
     @Test
     public void testRemoveFigure(){
         //Given
-        ArrayList<Shape> shapes = new ArrayList<Shape>();
+        ShapeCollector shapes = new ShapeCollector();
         Triangle triangle = new Triangle();
         Circle circle = new Circle();
         Square square = new Square();
@@ -66,7 +66,7 @@ public class ShapeCollectorTestSuite {
     @Test
     public void testGetFigure(){
         //Given
-        ArrayList<Shape> shapes = new ArrayList<Shape>();
+        ShapeCollector shapes = new ShapeCollector();
         Triangle triangle = new Triangle();
         Circle circle = new Circle();
         Square square = new Square();
