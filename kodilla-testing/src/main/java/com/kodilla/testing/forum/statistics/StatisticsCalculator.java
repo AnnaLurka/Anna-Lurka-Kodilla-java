@@ -21,7 +21,7 @@ public class StatisticsCalculator{
 
         if (numberOfUsers == 0) {
             avePostsPerUser  = 0;
-            aveCommentsPerUser = 0;
+              aveCommentsPerUser = 0;
         }
 
         if (postsCount == 0) {
@@ -29,9 +29,6 @@ public class StatisticsCalculator{
         }
 
 
-        resultList.add(numberOfUsers);
-        resultList.add(postsCount);
-        resultList.add(commentsCount);
         resultList.add(avePostsPerUser);
         resultList.add(aveCommentsPerUser);
         resultList.add(aveCommentsPerPost);

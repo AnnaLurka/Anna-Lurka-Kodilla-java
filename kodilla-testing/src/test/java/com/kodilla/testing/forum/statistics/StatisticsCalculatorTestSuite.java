@@ -14,7 +14,7 @@ public class StatisticsCalculatorTestSuite {
     public void testCalculateAdvStatistics0Posts() {
         //Given
         Statistics statisticsMock = mock(Statistics.class);
-        StatisticsCalculator statisticsCalculator = new StatisticsCalculator(statisticsMock);
+        StatisticsCalculator statisticsCalculator = new StatisticsCalculator();
 
         ArrayList<Double> statisticsList0Posts = new ArrayList<Double>();
         double avePostsPerUser = 0;
@@ -26,16 +26,16 @@ public class StatisticsCalculatorTestSuite {
         statisticsList0Posts.add(aveCommentsPerPost);
 
         //When
-        ArrayList<Double> list0Posts = statisticsCalculator.calculateAdvStatistics().size();
+        ArrayList<Double> list0Posts = statisticsCalculator.calculateAdvStatistics(statisticsMock);
 
         //Then
-        Assert.assertEquals(3, list0Posts);
+        Assert.assertEquals(statisticsList0Posts, list0Posts);
     }
     @Test
     public void testCalculateAdvStatistics1000Posts() {
         //Given
         Statistics statisticsMock = mock(Statistics.class);
-        StatisticsCalculator statisticsCalculator = new StatisticsCalculator(statisticsMock);
+        StatisticsCalculator statisticsCalculator = new StatisticsCalculator();
 
         ArrayList<Double> statisticsList1000Posts = new ArrayList<Double>();
         double avePostsPerUser = 3.13;
@@ -47,17 +47,17 @@ public class StatisticsCalculatorTestSuite {
         statisticsList1000Posts.add(aveCommentsPerPost);
 
         //When
-        ArrayList<Double> list1000Posts = statisticsCalculator.calculateAdvStatistics().size();
+        ArrayList<Double> list1000Posts = statisticsCalculator.calculateAdvStatistics(statisticsMock);
 
         //Then
-        Assert.assertEquals(3, list1000Posts);
+        Assert.assertEquals(statisticsList1000Posts, list1000Posts);
     }
 
     @Test
     public void testCalculateAdvStatistics0Comments() {
         //Given
         Statistics statisticsMock = mock(Statistics.class);
-        StatisticsCalculator statisticsCalculator = new StatisticsCalculator(statisticsMock);
+        StatisticsCalculator statisticsCalculator = new StatisticsCalculator();
 
         ArrayList<Double> statisticsList0Comments = new ArrayList<Double>();
         double avePostsPerUser = 3.44;
@@ -69,38 +69,38 @@ public class StatisticsCalculatorTestSuite {
         statisticsList0Comments.add(aveCommentsPerPost);
 
         //When
-        ArrayList<Double> list0Comments = statisticsCalculator.calculateAdvStatistics().size();
+        ArrayList<Double> list0Comments = statisticsCalculator.calculateAdvStatistics(statisticsMock);
 
         //Then
-        Assert.assertEquals(3, list0Comments);
+        Assert.assertEquals(statisticsList0Comments, list0Comments);
     }
 
     @Test
     public void testCalculateAdvStatisticsCommentsLessThanPosts() {
         //Given
         Statistics statisticsMock = mock(Statistics.class);
-        StatisticsCalculator statisticsCalculator = new StatisticsCalculator(statisticsMock);
+        StatisticsCalculator statisticsCalculator = new StatisticsCalculator();
 
         ArrayList<Double> statisticsListCommentsLessThanPosts = new ArrayList<Double>();
-        double avePostsPerUser = 5.44;
-        double aveCommentsPerUser = 6.55;
-        double aveCommentsPerPost = 0.46;
+        double avePostsPerUser = 1.42;
+        double aveCommentsPerUser = 0.28;
+        double aveCommentsPerPost = 0.20;
 
         statisticsListCommentsLessThanPosts.add(avePostsPerUser);
         statisticsListCommentsLessThanPosts.add(aveCommentsPerUser);
         statisticsListCommentsLessThanPosts.add(aveCommentsPerPost);
 
         //When
-        ArrayList<Double> listCommentsLessThanPosts = statisticsCalculator.calculateAdvStatistics().size();
+        ArrayList<Double> listCommentsLessThanPosts = statisticsCalculator.calculateAdvStatistics(statisticsMock);
 
         //Then
-        Assert.assertEquals(3, listCommentsLessThanPosts);
+        Assert.assertEquals(statisticsListCommentsLessThanPosts, listCommentsLessThanPosts);
     }
     @Test
     public void testCalculateAdvStatisticsCommentsMoreThanPosts() {
         //Given
         Statistics statisticsMock = mock(Statistics.class);
-        StatisticsCalculator statisticsCalculator = new StatisticsCalculator(statisticsMock);
+        StatisticsCalculator statisticsCalculator = new StatisticsCalculator();
 
         ArrayList<Double> statisticsListCommentsMoreThanPosts = new ArrayList<Double>();
         double avePostsPerUser = 5.66;
@@ -112,16 +112,16 @@ public class StatisticsCalculatorTestSuite {
         statisticsListCommentsMoreThanPosts.add(aveCommentsPerPost);
 
         //When
-        ArrayList<Double> listCommentsMoreThanPosts = statisticsCalculator.calculateAdvStatistics().size();
+        ArrayList<Double> listCommentsMoreThanPosts = statisticsCalculator.calculateAdvStatistics(statisticsMock);
 
         //Then
-        Assert.assertEquals(3, listCommentsMoreThanPosts);
+        Assert.assertEquals(statisticsListCommentsMoreThanPosts, listCommentsMoreThanPosts);
     }
     @Test
     public void testCalculateAdvStatistics0Users() {
         //Given
         Statistics statisticsMock = mock(Statistics.class);
-        StatisticsCalculator statisticsCalculator = new StatisticsCalculator(statisticsMock);
+        StatisticsCalculator statisticsCalculator = new StatisticsCalculator();
 
         ArrayList<Double> statisticsList0Users = new ArrayList<Double>();
         double avePostsPerUser = 0;
@@ -133,16 +133,16 @@ public class StatisticsCalculatorTestSuite {
         statisticsList0Users.add(aveCommentsPerPost);
 
         //When
-        ArrayList<Double> list0Users = statisticsCalculator.calculateAdvStatistics().size();
+        ArrayList<Double> list0Users = statisticsCalculator.calculateAdvStatistics(statisticsMock);
 
         //Then
-        Assert.assertEquals(3, list0Users);
+        Assert.assertEquals(statisticsList0Users, list0Users);
     }
     @Test
     public void testCalculateAdvStatistics100Users() {
         //Given
         Statistics statisticsMock = mock(Statistics.class);
-        StatisticsCalculator statisticsCalculator = new StatisticsCalculator(statisticsMock);
+        StatisticsCalculator statisticsCalculator = new StatisticsCalculator();
 
         ArrayList<Double> statisticsList100Users = new ArrayList<Double>();
         double avePostsPerUser = 4.55;
@@ -155,9 +155,9 @@ public class StatisticsCalculatorTestSuite {
         statisticsList100Users.add(aveCommentsPerPost);
 
         //When
-        ArrayList<Double> list100Users = statisticsCalculator.calculateAdvStatistics().size();
+        ArrayList<Double> list100Users = statisticsCalculator.calculateAdvStatistics(statisticsMock);
 
         //Then
-        Assert.assertEquals(3, list100Users);
+        Assert.assertEquals(statisticsList100Users, list100Users);
     }
 }
