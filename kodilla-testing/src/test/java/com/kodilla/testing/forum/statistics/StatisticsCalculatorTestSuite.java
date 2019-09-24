@@ -17,18 +17,9 @@ public class StatisticsCalculatorTestSuite {
         StatisticsCalculator statisticsCalculator = new StatisticsCalculator(statisticsMock);
 
         ArrayList<Double> statisticsList0Posts = new ArrayList<Double>();
-        double avePostsPerUser = 0/statisticsMock.usersNames().size();
-        double aveCommentsPerUser = 7 /statisticsMock.usersNames().size();
-        double aveCommentsPerPost = 7/0;
-
-        double postsCount = 0;
-        if (postsCount == 0) {
-            aveCommentsPerPost = 0;
-        }
-        if (statisticsMock.usersNames().size() == 0) {
-            avePostsPerUser  = 0;
-            aveCommentsPerUser = 0;
-        }
+        double avePostsPerUser = 0;
+        double aveCommentsPerUser = 0;
+        double aveCommentsPerPost = 0;
 
         statisticsList0Posts.add(avePostsPerUser);
         statisticsList0Posts.add(aveCommentsPerUser);
@@ -47,15 +38,9 @@ public class StatisticsCalculatorTestSuite {
         StatisticsCalculator statisticsCalculator = new StatisticsCalculator(statisticsMock);
 
         ArrayList<Double> statisticsList1000Posts = new ArrayList<Double>();
-        double avePostsPerUser = 1000/statisticsMock.usersNames().size();
-        double aveCommentsPerUser = 15 /statisticsMock.usersNames().size();
-        double aveCommentsPerPost = 15/1000;
-
-
-        if (statisticsMock.usersNames().size() == 0) {
-            avePostsPerUser  = 0;
-            aveCommentsPerUser = 0;
-        }
+        double avePostsPerUser = 3.13;
+        double aveCommentsPerUser = 2.11;
+        double aveCommentsPerPost = 5.12;
 
         statisticsList1000Posts.add(avePostsPerUser);
         statisticsList1000Posts.add(aveCommentsPerUser);
@@ -75,15 +60,9 @@ public class StatisticsCalculatorTestSuite {
         StatisticsCalculator statisticsCalculator = new StatisticsCalculator(statisticsMock);
 
         ArrayList<Double> statisticsList0Comments = new ArrayList<Double>();
-        double avePostsPerUser = 7/statisticsMock.usersNames().size();
-        double aveCommentsPerUser = 0 /statisticsMock.usersNames().size();
-        double aveCommentsPerPost = 0/7;
-
-
-        if (statisticsMock.usersNames().size() == 0) {
-            avePostsPerUser  = 0;
-            aveCommentsPerUser = 0;
-        }
+        double avePostsPerUser = 3.44;
+        double aveCommentsPerUser = 0;
+        double aveCommentsPerPost = 0;
 
         statisticsList0Comments.add(avePostsPerUser);
         statisticsList0Comments.add(aveCommentsPerUser);
@@ -103,15 +82,9 @@ public class StatisticsCalculatorTestSuite {
         StatisticsCalculator statisticsCalculator = new StatisticsCalculator(statisticsMock);
 
         ArrayList<Double> statisticsListCommentsLessThanPosts = new ArrayList<Double>();
-        double avePostsPerUser = 15/statisticsMock.usersNames().size();
-        double aveCommentsPerUser = 7 /statisticsMock.usersNames().size();
-        double aveCommentsPerPost = 7/15;
-
-
-        if (statisticsMock.usersNames().size() == 0) {
-            avePostsPerUser  = 0;
-            aveCommentsPerUser = 0;
-        }
+        double avePostsPerUser = 5.44;
+        double aveCommentsPerUser = 6.55;
+        double aveCommentsPerPost = 0.46;
 
         statisticsListCommentsLessThanPosts.add(avePostsPerUser);
         statisticsListCommentsLessThanPosts.add(aveCommentsPerUser);
@@ -130,15 +103,9 @@ public class StatisticsCalculatorTestSuite {
         StatisticsCalculator statisticsCalculator = new StatisticsCalculator(statisticsMock);
 
         ArrayList<Double> statisticsListCommentsMoreThanPosts = new ArrayList<Double>();
-        double avePostsPerUser = 7/statisticsMock.usersNames().size();
-        double aveCommentsPerUser = 15 /statisticsMock.usersNames().size();
-        double aveCommentsPerPost = 15/7;
-
-
-        if (statisticsMock.usersNames().size() == 0) {
-            avePostsPerUser  = 0;
-            aveCommentsPerUser = 0;
-        }
+        double avePostsPerUser = 5.66;
+        double aveCommentsPerUser = 3.22 ;
+        double aveCommentsPerPost = 2.14;
 
         statisticsListCommentsMoreThanPosts.add(avePostsPerUser);
         statisticsListCommentsMoreThanPosts.add(aveCommentsPerUser);
@@ -157,15 +124,9 @@ public class StatisticsCalculatorTestSuite {
         StatisticsCalculator statisticsCalculator = new StatisticsCalculator(statisticsMock);
 
         ArrayList<Double> statisticsList0Users = new ArrayList<Double>();
-        double avePostsPerUser = 7/0;
-        double aveCommentsPerUser = 15 /0;
-        double aveCommentsPerPost = 15/7;
-
-
-        if (statisticsMock.usersNames().size() == 0) {
-            avePostsPerUser  = 0;
-            aveCommentsPerUser = 0;
-        }
+        double avePostsPerUser = 0;
+        double aveCommentsPerUser = 0;
+        double aveCommentsPerPost = 0;
 
         statisticsList0Users.add(avePostsPerUser);
         statisticsList0Users.add(aveCommentsPerUser);
@@ -184,9 +145,9 @@ public class StatisticsCalculatorTestSuite {
         StatisticsCalculator statisticsCalculator = new StatisticsCalculator(statisticsMock);
 
         ArrayList<Double> statisticsList100Users = new ArrayList<Double>();
-        double avePostsPerUser = 7/100;
-        double aveCommentsPerUser = 15 /100;
-        double aveCommentsPerPost = 15/7;
+        double avePostsPerUser = 4.55;
+        double aveCommentsPerUser = 6.88;
+        double aveCommentsPerPost = 5.99;
 
 
         statisticsList100Users.add(avePostsPerUser);

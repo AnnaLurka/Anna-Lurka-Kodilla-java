@@ -5,9 +5,7 @@ import java.util.HashSet;
 import java.util.List;
 
 public class StatisticsCalculator{
-    Statistics statistics;
 
-    public StatisticsCalculator(Statistics statistics) {this.statistics = statistics;}
 
     public ArrayList<Double> calculateAdvStatistics(Statistics statistics){
 
@@ -20,6 +18,15 @@ public class StatisticsCalculator{
         double avePostsPerUser = postsCount/numberOfUsers;
         double aveCommentsPerUser = commentsCount/numberOfUsers;
         double aveCommentsPerPost = commentsCount/postsCount;
+
+        if (numberOfUsers == 0) {
+            avePostsPerUser  = 0;
+            aveCommentsPerUser = 0;
+        }
+
+        if (postsCount == 0) {
+            aveCommentsPerPost = 0;
+        }
 
 
         resultList.add(numberOfUsers);
