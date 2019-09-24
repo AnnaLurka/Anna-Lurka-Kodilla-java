@@ -138,6 +138,6 @@ public class BookDirectoryTestSuite {
         //When
         List<Book> theListOfAniasBooks5 = bookLibrary.listBooksInHandsOf(ania);
         //Then
-        assertEquals(0, theListOfAniasBooks5.size());
+        assertEquals(5, theListOfAniasBooks5.size());
     }
 }
