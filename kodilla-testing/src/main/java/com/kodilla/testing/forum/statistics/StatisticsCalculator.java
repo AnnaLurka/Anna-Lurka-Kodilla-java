@@ -5,6 +5,9 @@ import java.util.HashSet;
 import java.util.List;
 
 public class StatisticsCalculator{
+    Statistics statistics;
+
+    public StatisticsCalculator(Statistics statistics) {this.statistics = statistics;}
 
     public ArrayList<Double> calculateAdvStatistics(Statistics statistics){
 
@@ -13,6 +16,7 @@ public class StatisticsCalculator{
         double numberOfUsers = statistics.usersNames().size();
         double postsCount = statistics.postsCount();
         double commentsCount = statistics.commentsCount();
+
         double avePostsPerUser = postsCount/numberOfUsers;
         double aveCommentsPerUser = commentsCount/numberOfUsers;
         double aveCommentsPerPost = commentsCount/postsCount;
@@ -28,7 +32,7 @@ public class StatisticsCalculator{
         return resultList;
     }
 
-    public void showStatistics(){
+    public void showStatistics(ArrayList<Double> resultList) {
 
         System.out.println(resultList);
     }
