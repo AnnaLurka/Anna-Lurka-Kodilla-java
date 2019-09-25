@@ -30,7 +30,7 @@ public class StatisticsCalculatorTestSuite {
 
         ArrayList<Double> statisticsList0Posts = new ArrayList<Double>();
         double avePostsPerUser = 0;
-        double aveCommentsPerUser = 0;
+        double aveCommentsPerUser = 20;
         double aveCommentsPerPost = 0;
         statisticsList0Posts.add(avePostsPerUser);
         statisticsList0Posts.add(aveCommentsPerUser);
@@ -55,9 +55,9 @@ public class StatisticsCalculatorTestSuite {
         List<String> names10 = generateListOfNNames(10);
 
         ArrayList<Double> statisticsList1000Posts = new ArrayList<Double>();
-        double avePostsPerUser = 3.13;
-        double aveCommentsPerUser = 2.11;
-        double aveCommentsPerPost = 5.12;
+        double avePostsPerUser = 100.00;
+        double aveCommentsPerUser = 20.00;
+        double aveCommentsPerPost = 0.20;
         statisticsList1000Posts.add(avePostsPerUser);
         statisticsList1000Posts.add(aveCommentsPerUser);
         statisticsList1000Posts.add(aveCommentsPerPost);
@@ -82,7 +82,7 @@ public class StatisticsCalculatorTestSuite {
         List<String> names10 = generateListOfNNames(10);
 
         ArrayList<Double> statisticsList0Comments = new ArrayList<Double>();
-        double avePostsPerUser = 3.44;
+        double avePostsPerUser = 20.00;
         double aveCommentsPerUser = 0;
         double aveCommentsPerPost = 0;
         statisticsList0Comments.add(avePostsPerUser);
@@ -109,9 +109,9 @@ public class StatisticsCalculatorTestSuite {
         List<String> names10 = generateListOfNNames(10);
 
         ArrayList<Double> statisticsListCommentsLessThanPosts = new ArrayList<Double>();
-        double avePostsPerUser = 1.42;
-        double aveCommentsPerUser = 0.28;
-        double aveCommentsPerPost = 0.20;
+        double avePostsPerUser = 20.00;
+        double aveCommentsPerUser = 10.00;
+        double aveCommentsPerPost = 0.50;
         statisticsListCommentsLessThanPosts.add(avePostsPerUser);
         statisticsListCommentsLessThanPosts.add(aveCommentsPerUser);
         statisticsListCommentsLessThanPosts.add(aveCommentsPerPost);
@@ -135,9 +135,9 @@ public class StatisticsCalculatorTestSuite {
         List<String> names10 = generateListOfNNames(10);
 
         ArrayList<Double> statisticsListCommentsMoreThanPosts = new ArrayList<Double>();
-        double avePostsPerUser = 5.66;
-        double aveCommentsPerUser = 3.22 ;
-        double aveCommentsPerPost = 2.14;
+        double avePostsPerUser = 10.00;
+        double aveCommentsPerUser = 20.00 ;
+        double aveCommentsPerPost = 2.00;
         statisticsListCommentsMoreThanPosts.add(avePostsPerUser);
         statisticsListCommentsMoreThanPosts.add(aveCommentsPerUser);
         statisticsListCommentsMoreThanPosts.add(aveCommentsPerPost);
@@ -168,8 +168,8 @@ public class StatisticsCalculatorTestSuite {
         statisticsList0Users.add(aveCommentsPerUser);
         statisticsList0Users.add(aveCommentsPerPost);
 
-        when(statisticsMock.postsCount()).thenReturn(100);
-        when(statisticsMock.commentsCount()).thenReturn(100);
+        when(statisticsMock.postsCount()).thenReturn(0);
+        when(statisticsMock.commentsCount()).thenReturn(0);
         when(statisticsMock.usersNames()).thenReturn(names0);
 
         //When
@@ -187,9 +187,9 @@ public class StatisticsCalculatorTestSuite {
         List<String> names100 = generateListOfNNames(100);
 
         ArrayList<Double> statisticsList100Users = new ArrayList<Double>();
-        double avePostsPerUser = 4.55;
-        double aveCommentsPerUser = 6.88;
-        double aveCommentsPerPost = 5.99;
+        double avePostsPerUser = 1.00;
+        double aveCommentsPerUser = 1.00;
+        double aveCommentsPerPost = 1.00;
         statisticsList100Users.add(avePostsPerUser);
         statisticsList100Users.add(aveCommentsPerUser);
         statisticsList100Users.add(aveCommentsPerPost);
