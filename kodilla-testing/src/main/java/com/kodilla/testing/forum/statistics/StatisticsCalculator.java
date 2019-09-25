@@ -11,9 +11,9 @@ public class StatisticsCalculator{
 
         ArrayList<Double> resultList = new ArrayList<Double>();
 
-        double numberOfUsers = statistics.usersNames().size();
-        double postsCount = statistics.postsCount();
-        double commentsCount = statistics.commentsCount();
+        int numberOfUsers = statistics.usersNames().size();
+        int postsCount = statistics.postsCount();
+        int commentsCount = statistics.commentsCount();
 
         double avePostsPerUser = postsCount/numberOfUsers;
         double aveCommentsPerUser = commentsCount/numberOfUsers;
@@ -21,7 +21,7 @@ public class StatisticsCalculator{
 
         if (numberOfUsers == 0) {
             avePostsPerUser  = 0;
-              aveCommentsPerUser = 0;
+            aveCommentsPerUser = 0;
         }
 
         if (postsCount == 0) {
