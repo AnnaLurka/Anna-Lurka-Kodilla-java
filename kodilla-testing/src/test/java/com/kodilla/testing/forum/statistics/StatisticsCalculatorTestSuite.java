@@ -26,16 +26,19 @@ public class StatisticsCalculatorTestSuite {
         Statistics statisticsMock = mock(Statistics.class);
         StatisticsCalculator statisticsCalculator = new StatisticsCalculator();
 
+        List<String> names10 = generateListOfNNames(10);
+
         ArrayList<Double> statisticsList0Posts = new ArrayList<Double>();
         double avePostsPerUser = 0;
         double aveCommentsPerUser = 0;
         double aveCommentsPerPost = 0;
-
         statisticsList0Posts.add(avePostsPerUser);
         statisticsList0Posts.add(aveCommentsPerUser);
         statisticsList0Posts.add(aveCommentsPerPost);
-        when(statisticsMock.postsCount()).thenReturn(0.00);
 
+        when(statisticsMock.postsCount()).thenReturn(0);
+        when(statisticsMock.commentsCount()).thenReturn(200);
+        when(statisticsMock.usersNames()).thenReturn(names10);
 
         //When
         ArrayList<Double> list0Posts = statisticsCalculator.calculateAdvStatistics(statisticsMock);
@@ -49,15 +52,19 @@ public class StatisticsCalculatorTestSuite {
         Statistics statisticsMock = mock(Statistics.class);
         StatisticsCalculator statisticsCalculator = new StatisticsCalculator();
 
+        List<String> names10 = generateListOfNNames(10);
+
         ArrayList<Double> statisticsList1000Posts = new ArrayList<Double>();
         double avePostsPerUser = 3.13;
         double aveCommentsPerUser = 2.11;
         double aveCommentsPerPost = 5.12;
-
         statisticsList1000Posts.add(avePostsPerUser);
         statisticsList1000Posts.add(aveCommentsPerUser);
         statisticsList1000Posts.add(aveCommentsPerPost);
-        when(statisticsMock.postsCount()).thenReturn(1000.00);
+
+        when(statisticsMock.postsCount()).thenReturn(1000);
+        when(statisticsMock.commentsCount()).thenReturn(200);
+        when(statisticsMock.usersNames()).thenReturn(names10);
 
         //When
         ArrayList<Double> list1000Posts = statisticsCalculator.calculateAdvStatistics(statisticsMock);
@@ -72,15 +79,19 @@ public class StatisticsCalculatorTestSuite {
         Statistics statisticsMock = mock(Statistics.class);
         StatisticsCalculator statisticsCalculator = new StatisticsCalculator();
 
+        List<String> names10 = generateListOfNNames(10);
+
         ArrayList<Double> statisticsList0Comments = new ArrayList<Double>();
         double avePostsPerUser = 3.44;
         double aveCommentsPerUser = 0;
         double aveCommentsPerPost = 0;
-
         statisticsList0Comments.add(avePostsPerUser);
         statisticsList0Comments.add(aveCommentsPerUser);
         statisticsList0Comments.add(aveCommentsPerPost);
-        when(statisticsMock.commentsCount()).thenReturn(0.00);
+
+        when(statisticsMock.postsCount()).thenReturn(200);
+        when(statisticsMock.commentsCount()).thenReturn(0);
+        when(statisticsMock.usersNames()).thenReturn(names10);
 
         //When
         ArrayList<Double> list0Comments = statisticsCalculator.calculateAdvStatistics(statisticsMock);
@@ -95,28 +106,25 @@ public class StatisticsCalculatorTestSuite {
         Statistics statisticsMock = mock(Statistics.class);
         StatisticsCalculator statisticsCalculator = new StatisticsCalculator();
 
+        List<String> names10 = generateListOfNNames(10);
+
         ArrayList<Double> statisticsListCommentsLessThanPosts = new ArrayList<Double>();
         double avePostsPerUser = 1.42;
         double aveCommentsPerUser = 0.28;
         double aveCommentsPerPost = 0.20;
-
         statisticsListCommentsLessThanPosts.add(avePostsPerUser);
         statisticsListCommentsLessThanPosts.add(aveCommentsPerUser);
         statisticsListCommentsLessThanPosts.add(aveCommentsPerPost);
 
-        double postsCount = statisticsMock.postsCount();
-        double commentsCount = statisticsMock.commentsCount();
-
-        when(statisticsMock.postsCount()).thenReturn(postsCount > commentsCount);
-        //chodzi mi o to, że chciałam zapisać warunek "komentarze mniejsze niż posty w powyższy sposób
-        // ale chyba ten sposób nie jest poprawny bo mi go pokreśla na czerwono, że tu nie może być typ boolean
-        //i nie znalazłam w dokumentacji Mokito "when" sposobu na użycie "when"  z warunkiem.
+        when(statisticsMock.postsCount()).thenReturn(200);
+        when(statisticsMock.commentsCount()).thenReturn(100);
+        when(statisticsMock.usersNames()).thenReturn(names10);
 
         //When
         ArrayList<Double> listCommentsLessThanPosts = statisticsCalculator.calculateAdvStatistics(statisticsMock);
 
         //Then
-        Assert.assertTrue(statisticsMock.commentsCount() < statisticsMock.postsCount());
+        Assert.assertEquals(statisticsListCommentsLessThanPosts, listCommentsLessThanPosts);
     }
     @Test
     public void testCalculateAdvStatisticsCommentsMoreThanPosts() {
@@ -124,19 +132,19 @@ public class StatisticsCalculatorTestSuite {
         Statistics statisticsMock = mock(Statistics.class);
         StatisticsCalculator statisticsCalculator = new StatisticsCalculator();
 
+        List<String> names10 = generateListOfNNames(10);
+
         ArrayList<Double> statisticsListCommentsMoreThanPosts = new ArrayList<Double>();
         double avePostsPerUser = 5.66;
         double aveCommentsPerUser = 3.22 ;
         double aveCommentsPerPost = 2.14;
-
-        double postsCount = statisticsMock.postsCount();
-        double commentsCount = statisticsMock.commentsCount();
-
         statisticsListCommentsMoreThanPosts.add(avePostsPerUser);
         statisticsListCommentsMoreThanPosts.add(aveCommentsPerUser);
         statisticsListCommentsMoreThanPosts.add(aveCommentsPerPost);
 
-        when(statisticsMock.postsCount()).thenReturn(postsCount < commentsCount);
+        when(statisticsMock.postsCount()).thenReturn(100);
+        when(statisticsMock.commentsCount()).thenReturn(200);
+        when(statisticsMock.usersNames()).thenReturn(names10);
 
         //When
         ArrayList<Double> listCommentsMoreThanPosts = statisticsCalculator.calculateAdvStatistics(statisticsMock);
@@ -150,16 +158,18 @@ public class StatisticsCalculatorTestSuite {
         Statistics statisticsMock = mock(Statistics.class);
         StatisticsCalculator statisticsCalculator = new StatisticsCalculator();
 
+        List<String> names0 = new ArrayList<String>();
+
         ArrayList<Double> statisticsList0Users = new ArrayList<Double>();
         double avePostsPerUser = 0;
         double aveCommentsPerUser = 0;
         double aveCommentsPerPost = 0;
-
         statisticsList0Users.add(avePostsPerUser);
         statisticsList0Users.add(aveCommentsPerUser);
         statisticsList0Users.add(aveCommentsPerPost);
 
-        List<String> names0 = new ArrayList<String>();
+        when(statisticsMock.postsCount()).thenReturn(100);
+        when(statisticsMock.commentsCount()).thenReturn(100);
         when(statisticsMock.usersNames()).thenReturn(names0);
 
         //When
@@ -174,17 +184,18 @@ public class StatisticsCalculatorTestSuite {
         Statistics statisticsMock = mock(Statistics.class);
         StatisticsCalculator statisticsCalculator = new StatisticsCalculator();
 
+        List<String> names100 = generateListOfNNames(100);
+
         ArrayList<Double> statisticsList100Users = new ArrayList<Double>();
         double avePostsPerUser = 4.55;
         double aveCommentsPerUser = 6.88;
         double aveCommentsPerPost = 5.99;
-
-
         statisticsList100Users.add(avePostsPerUser);
         statisticsList100Users.add(aveCommentsPerUser);
         statisticsList100Users.add(aveCommentsPerPost);
 
-        List<String> names100 = generateListOfNNames(100);
+        when(statisticsMock.postsCount()).thenReturn(100);
+        when(statisticsMock.commentsCount()).thenReturn(100);
         when(statisticsMock.usersNames()).thenReturn(names100);
 
         //When

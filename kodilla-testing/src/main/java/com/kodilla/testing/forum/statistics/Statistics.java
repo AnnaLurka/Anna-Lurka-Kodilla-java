@@ -5,8 +5,8 @@ import java.util.List;
 public interface Statistics {
 
     List<String> usersNames();
-    double postsCount();
-    double commentsCount();
+    int postsCount();
+    int commentsCount();
 }
 
 
