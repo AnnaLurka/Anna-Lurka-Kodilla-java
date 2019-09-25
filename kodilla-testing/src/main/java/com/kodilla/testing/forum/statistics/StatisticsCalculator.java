@@ -11,23 +11,33 @@ public class StatisticsCalculator{
 
         ArrayList<Double> resultList = new ArrayList<Double>();
 
-        int numberOfUsers = statistics.usersNames().size();
-        int postsCount = statistics.postsCount();
-        int commentsCount = statistics.commentsCount();
+        double numberOfUsers = (double) statistics.usersNames().size();
+        double postsCount = (double)statistics.postsCount();
+        double commentsCount = (double)statistics.commentsCount();
 
-        double avePostsPerUser = postsCount/numberOfUsers;
-        double aveCommentsPerUser = commentsCount/numberOfUsers;
-        double aveCommentsPerPost = commentsCount/postsCount;
+        double avePostsPerUser;
+        double aveCommentsPerUser;
+        double aveCommentsPerPost;
 
-        if (numberOfUsers == 0) {
-            avePostsPerUser  = 0;
-            aveCommentsPerUser = 0;
+        if (numberOfUsers != 0) {
+
+            avePostsPerUser = postsCount / numberOfUsers;
+            aveCommentsPerUser = commentsCount/numberOfUsers;
+
+            } else {
+
+                avePostsPerUser  = 0;
+                aveCommentsPerUser = 0;
         }
 
-        if (postsCount == 0) {
-            aveCommentsPerPost = 0;
-        }
+        if (postsCount != 0) {
 
+            aveCommentsPerPost = commentsCount / postsCount;
+
+            } else {
+
+                aveCommentsPerPost = 0;
+        }
 
         resultList.add(avePostsPerUser);
         resultList.add(aveCommentsPerUser);
