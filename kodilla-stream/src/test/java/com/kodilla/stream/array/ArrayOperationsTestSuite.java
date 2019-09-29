@@ -35,6 +35,6 @@ public class ArrayOperationsTestSuite {
         double result = ArrayOperations.getAverage(numbers);
 
         //Then
-        Assert.assertEquals(10.5, result);
+        Assert.assertEquals(10.5, result, 0);
     }
 }
