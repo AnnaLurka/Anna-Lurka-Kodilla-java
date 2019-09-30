@@ -6,10 +6,10 @@ import java.util.List;
 
 public final class World {
 
-   // private final List<Continent> continents = new ArrayList<>();
+    private final List<Continent> continents = new ArrayList<>();
 
 
-    public BigDecimal getPeopleQuantity(List<Country> continents) {
+    public BigDecimal getPeopleQuantity(List<Continent> continents) {
 
         return continents.stream()
                 .flatMap(country -> country.getCountries().stream())
