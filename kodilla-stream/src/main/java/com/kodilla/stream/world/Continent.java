@@ -6,12 +6,16 @@ import java.util.List;
 
 public final class Continent {
 
-    private final List<Country> countries = new ArrayList<>();
+    private List<Country> countries = new ArrayList<>();
 
-    public List<Country> getCountries() {
-        return countries;
+    public Continent(List<Country> countries) {
+        this.countries = countries;
     }
-}
+
+        public List<Country> getCountries () {
+            return countries;
+        }
+    }
 
 
 

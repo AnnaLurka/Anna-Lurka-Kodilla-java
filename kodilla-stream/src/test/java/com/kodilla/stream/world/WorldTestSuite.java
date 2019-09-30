@@ -12,6 +12,8 @@ public class WorldTestSuite {
     public void testGetPeopleQuantity() {
 
         List<Continent> continents = new ArrayList<>();
+
+
         continents.add(new Country("poland", new BigDecimal("37000000")));
         continents.add(new Country("germany", new BigDecimal("82000000")));
         continents.add(new Country("slovakia", new BigDecimal("5000000")));
