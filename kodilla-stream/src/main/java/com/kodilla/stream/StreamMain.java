@@ -20,8 +20,8 @@ public class StreamMain {
                 .collect(Collectors.toMap(ForumUser::getUserID, forumUser -> forumUser));
 
         theResultForum.entrySet().stream()
-            .map(entry -> entry.getKey() + ": " + entry.getValue())
-            .forEach(System.out::println);
+                .map(entry -> entry.getKey() + ": " + entry.getValue())
+                .forEach(System.out::println);
     }
 }
 
