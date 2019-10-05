@@ -151,9 +151,12 @@ public class BoardTestSuite {
         long sumDaysForAllTasks;
         sumDaysForAllTasks = project.getTaskLists().stream()
                 .filter(inProgressTasks::contains)
-                .flatMap(tl -> tl.getTasks().stream())
-                .map(d ->ChronoUnit.DAYS.between(d.getCreated(), LocalDate.now()))
-                .count();
+                .flatMap(taskList -> taskList.getTasks().stream())
+                .mapToLong(task ->ChronoUnit.DAYS.between(task.getCreated(), LocalDate.now()))
+                .sum();
+
+                //.map(task ->ChronoUnit.DAYS.between(task.getCreated(), LocalDate.now()))
+                //.reduce((long) 0, (sum, current) -> sum = sum + current);
 
         long quantityOfTasks;
         quantityOfTasks = project.getTaskLists().stream()
@@ -161,9 +164,12 @@ public class BoardTestSuite {
                 .flatMap(tl -> tl.getTasks().stream())
                 .map(t -> 1)
                 .count();
+
         double average = sumDaysForAllTasks/quantityOfTasks;
 
+
         //Then
-        Assert.assertEquals(14.16, average, 0.01);
+        Assert.assertEquals(10, average, 0.01);
+
     }
 }
