@@ -2,12 +2,13 @@ package com.kodilla.exception.test;
 
 public class ExceptionHandling {
 
-    public static void main(String arg[]) {
+    public void handle () {
 
-        SecondChallenge secondChallenge = new SecondChallenge();;
+        SecondChallenge secondChallenge = new SecondChallenge();
+        String result = "";
 
         try {
-            secondChallenge.probablyIWillThrowException(1.1, 1.2);
+            result = secondChallenge.probablyIWillThrowException(1.1, 1.2);
 
         } catch (Exception e) {
 
@@ -15,7 +16,7 @@ public class ExceptionHandling {
         }
 
         finally{
-            System.out.println("Finished");
+            System.out.println(result);
         }
     }
 }
