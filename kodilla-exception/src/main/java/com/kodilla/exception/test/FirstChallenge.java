@@ -6,9 +6,9 @@ public class FirstChallenge {
 
         try{
 
-        if (b == 0) {
-            throw new ArithmeticException();
-        }
+            if (b == 0) {
+                throw new ArithmeticException();
+            }
 
         } catch (ArithmeticException ae) {
 
