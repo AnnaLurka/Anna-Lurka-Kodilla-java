@@ -17,7 +17,7 @@ public class FlightRunner {
         flightMap.put("Rzeszów", false);
 
 
-        if(flightMap.containsKey(flight.getArrivalAirport())) {
+        if(flightMap.containsKey(flight.getArrivalAirport()) && flightMap.containsKey(flight.getDepartureAirport())) {
             if (flightMap.get(flight.getArrivalAirport())) {
                 System.out.println("There is a connection.");
 
