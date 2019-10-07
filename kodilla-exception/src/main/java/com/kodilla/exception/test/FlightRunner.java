@@ -18,7 +18,7 @@ public class FlightRunner {
 
 
         if(flightMap.containsKey(flight.getArrivalAirport()) && flightMap.containsKey(flight.getDepartureAirport())) {
-            if (flightMap.get(flight.getArrivalAirport())) {
+            if (flightMap.get(flight.getArrivalAirport()) && (flightMap.get(flight.getDepartureAirport()))) {
                 System.out.println("There is a connection.");
 
             } else {
