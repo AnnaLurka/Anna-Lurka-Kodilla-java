@@ -32,17 +32,17 @@ public class MovieStore {
     }
 }
 
-//class Application {
-//
-//    public static void main(String[] args) {
-//
-//
-//        MovieStore movieStore = new MovieStore();
-//        String theResult = movieStore.getMovies().entrySet().stream()
-//                .flatMap(l -> l.getValue().stream())
-//                .map(String::toString)
-//                .collect(Collectors.joining("!"));
-//
-//        System.out.println(theResult);
-//    }
-//}
+class Application {
+
+    public static void main(String[] args) {
+
+
+        MovieStore movieStore = new MovieStore();
+        String theResult = movieStore.getMovies().entrySet().stream()
+                .flatMap(l -> l.getValue().stream())
+                .map(String::toString)
+                .collect(Collectors.joining("!"));
+
+        System.out.println(theResult);
+    }
+}
