@@ -19,15 +19,17 @@ public class FlightSearch {
 
     public List<Flight> findFlightTo(String city) {
         List<Flight> flightTo = flightsRepository.getFlights().stream()
-                .filter(flight -> flight.getArrivalCiy().equals(city))
+                .filter(flight -> flight.getArrivalCity().equals(city))
                 .collect(Collectors.toList());
         System.out.println(flightTo);
         return flightTo;
     }
 
-        public List<Flight> findFlightThrough(String city){
+        public List<Flight> findFlightThrough(String departureCity, String city, String arrivalCity){
             List<Flight> flightThrough = flightsRepository.getFlights().stream()
+                    .filter(flight -> flight.getDepartureCity().equals(departureCity))
                     .filter(flight -> flight.getThroughCity().equals(city))
+                    .filter(flight -> flight.getArrivalCity().equals(arrivalCity))
                     .collect(Collectors.toList());
             System.out.println(flightThrough);
             return flightThrough;

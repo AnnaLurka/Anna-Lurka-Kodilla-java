@@ -7,6 +7,6 @@ public class Application {
         FlightSearch flightSearch = new FlightSearch();
         flightSearch.findFlightFrom("Kraków");
         flightSearch.findFlightTo("Kraków");
-        flightSearch.findFlightThrough("Kraków");
+        flightSearch.findFlightThrough("Kraków", "Wrocław", "Szczecin");
     }
 }

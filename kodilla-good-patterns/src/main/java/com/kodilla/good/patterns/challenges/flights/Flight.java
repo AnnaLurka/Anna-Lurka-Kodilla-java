@@ -19,7 +19,7 @@ public class Flight {
         return departureCity;
     }
 
-    public String getArrivalCiy() {
+    public String getArrivalCity() {
         return arrivalCity;
     }
 
