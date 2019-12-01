@@ -1,10 +1,14 @@
 package com.kodilla.good.patterns.challenges.foodToDoor;
 
-public class ExtraFoodShop implements OrderService {
 
-    public boolean order(Supplier supplier, Product product, int quantity){
+import java.util.Map;
 
-        System.out.println("Ordering a " + product.getProductName() +  " from: " + supplier.getName()  + '\n'+  "Quanity: " + quantity);
+public class ExtraFoodShop implements Supplier {
+
+
+    public boolean process( Map<Product, Integer> listOfProducts) {
+
+        System.out.println("Ordering from Extra Food Shop.");
 
         return true;
     }

@@ -1,14 +1,8 @@
 package com.kodilla.good.patterns.challenges.foodToDoor;
 
-public class Supplier {
+import java.util.Map;
 
-    private String name;
+    public interface Supplier {
 
-    public Supplier(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
+        public boolean process(Map<Product, Integer> listOfProducts);
 }
