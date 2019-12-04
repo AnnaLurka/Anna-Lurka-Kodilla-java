@@ -7,8 +7,8 @@ public class ProductOrderService {
     private OrderRepository orderRepository;
 
     public ProductOrderService(final InformationService informationService,
-                           final OrderService orderService,
-                           final OrderRepository orderRepository) {
+                               final OrderService orderService,
+                               final OrderRepository orderRepository) {
         this.informationService = informationService;
         this.orderService = orderService;
         this.orderRepository = orderRepository;
@@ -18,7 +18,7 @@ public class ProductOrderService {
         boolean isOrdered = orderService.order(orderRequest.getUser(), orderRequest.getProduct(),
                 orderRequest.getQuantity());
 
-        if(isOrdered) {
+        if (isOrdered) {
             informationService.inform(orderRequest.getUser());
             orderRepository.createOrder(orderRequest.getUser(), orderRequest.getProduct(),
                     orderRequest.getQuantity());

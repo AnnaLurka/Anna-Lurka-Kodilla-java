@@ -5,11 +5,11 @@ public class Triangle implements Shape {
     private double a;
     private double h;
 
-    public String  getShapeName(){
+    public String getShapeName() {
         return "triangle";
     }
 
-    public double getField(){
+    public double getField() {
         return 0.5 * a * h;
     }
 }

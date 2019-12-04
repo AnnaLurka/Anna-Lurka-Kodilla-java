@@ -4,7 +4,7 @@ public class FirstChallenge {
 
     public double divide(double a, double b) throws ArithmeticException {
 
-        try{
+        try {
 
             if (b == 0) {
                 throw new ArithmeticException();
@@ -19,6 +19,7 @@ public class FirstChallenge {
 
     /**
      * This main can throw an ArithmeticException!!!
+     *
      * @param args
      */
     public static void main(String[] args) {

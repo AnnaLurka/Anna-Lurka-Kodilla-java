@@ -4,11 +4,11 @@ import java.util.Map;
 
 public class Order {
 
-    public void order(Supplier supplier, Map<Product, Integer> listOfProducts){
+    public void order(Supplier supplier, Map<Product, Integer> listOfProducts) {
 
         boolean ordered = supplier.process(listOfProducts);
 
-        if(ordered) {
+        if (ordered) {
 
             System.out.println("Your order has been completed.");
 

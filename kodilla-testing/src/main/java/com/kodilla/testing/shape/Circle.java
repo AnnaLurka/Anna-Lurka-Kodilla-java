@@ -4,11 +4,11 @@ public class Circle implements Shape {
 
     double r;
 
-    public String getShapeName(){
+    public String getShapeName() {
         return "circle";
     }
 
-    public double getField(){
+    public double getField() {
         return 3.14 * r * r;
     }
 

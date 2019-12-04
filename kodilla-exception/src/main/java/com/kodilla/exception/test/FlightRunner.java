@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class FlightRunner {
 
-    public void findFlight(Flight flight) throws RouteNotFoundException{
+    public void findFlight(Flight flight) throws RouteNotFoundException {
 
 
         Map<String, Boolean> flightMap = new HashMap<>();
@@ -17,7 +17,7 @@ public class FlightRunner {
         flightMap.put("Rzeszów", false);
 
 
-        if(flightMap.containsKey(flight.getArrivalAirport()) && flightMap.containsKey(flight.getDepartureAirport())) {
+        if (flightMap.containsKey(flight.getArrivalAirport()) && flightMap.containsKey(flight.getDepartureAirport())) {
             if (flightMap.get(flight.getArrivalAirport()) && (flightMap.get(flight.getDepartureAirport()))) {
                 System.out.println("There is a connection.");
 
@@ -35,14 +35,14 @@ public class FlightRunner {
         FlightRunner flightRunner = new FlightRunner();
 
         try {
-            flightRunner.findFlight(new Flight("Cracow" , "Warsaw"));
-            flightRunner.findFlight(new Flight("Cracow" , "Rzeszów"));
-            flightRunner.findFlight(new Flight("Cracow" , "Wieliczka"));
+            flightRunner.findFlight(new Flight("Cracow", "Warsaw"));
+            flightRunner.findFlight(new Flight("Cracow", "Rzeszów"));
+            flightRunner.findFlight(new Flight("Cracow", "Wieliczka"));
 
         } catch (RouteNotFoundException e) {
             System.out.println("There is no such an airport.");
 
-        } finally{
+        } finally {
             System.out.println("The end of search.");
         }
     }

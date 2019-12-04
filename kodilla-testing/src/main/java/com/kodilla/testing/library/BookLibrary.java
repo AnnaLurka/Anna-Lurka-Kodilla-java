@@ -21,6 +21,7 @@ public class BookLibrary {
 
         return bookList;
     }
+
     public List<Book> listBooksInHandsOf(LibraryUser libraryUser) {
         List<Book> borrowedBooksList = libraryDatabase.listBooksInHandsOf(libraryUser);
 

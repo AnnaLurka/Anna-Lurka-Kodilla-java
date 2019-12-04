@@ -1,22 +1,24 @@
 package com.kodilla.testing.collection;
+
 import com.kodilla.testing.collection.OddNumbersExterminator;
 import org.junit.*;
+
 import java.util.*;
 
 public class CollectionTestSuite {
 
     @Before
-    public void before(){
+    public void before() {
         System.out.println("Test Case: begin");
-}
+    }
 
     @After
-    public void after(){
+    public void after() {
         System.out.println("Test Case: end");
     }
 
     @Test
-    public void testOddNumbersExterminatorEmptyList(){
+    public void testOddNumbersExterminatorEmptyList() {
         //Given
         ArrayList<Integer> emptyList = new ArrayList<Integer>();
 
@@ -30,7 +32,7 @@ public class CollectionTestSuite {
     }
 
     @Test
-    public void testOddNumbersExterminatorNormalList(){
+    public void testOddNumbersExterminatorNormalList() {
         //Given
         ArrayList<Integer> normalList = new ArrayList<Integer>();
         normalList.add(1);

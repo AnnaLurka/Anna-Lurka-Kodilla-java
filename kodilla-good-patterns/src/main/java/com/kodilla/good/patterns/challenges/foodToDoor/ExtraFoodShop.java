@@ -6,7 +6,7 @@ import java.util.Map;
 public class ExtraFoodShop implements Supplier {
 
 
-    public boolean process( Map<Product, Integer> listOfProducts) {
+    public boolean process(Map<Product, Integer> listOfProducts) {
 
         System.out.println("Ordering from Extra Food Shop.");
 

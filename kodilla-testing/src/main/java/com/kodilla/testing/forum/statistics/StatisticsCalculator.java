@@ -4,16 +4,16 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 
-public class StatisticsCalculator{
+public class StatisticsCalculator {
 
 
-    public ArrayList<Double> calculateAdvStatistics(Statistics statistics){
+    public ArrayList<Double> calculateAdvStatistics(Statistics statistics) {
 
         ArrayList<Double> resultList = new ArrayList<Double>();
 
         double numberOfUsers = (double) statistics.usersNames().size();
-        double postsCount = (double)statistics.postsCount();
-        double commentsCount = (double)statistics.commentsCount();
+        double postsCount = (double) statistics.postsCount();
+        double commentsCount = (double) statistics.commentsCount();
 
         double avePostsPerUser;
         double aveCommentsPerUser;
@@ -22,21 +22,21 @@ public class StatisticsCalculator{
         if (numberOfUsers != 0) {
 
             avePostsPerUser = postsCount / numberOfUsers;
-            aveCommentsPerUser = commentsCount/numberOfUsers;
+            aveCommentsPerUser = commentsCount / numberOfUsers;
 
-            } else {
+        } else {
 
-                avePostsPerUser  = 0;
-                aveCommentsPerUser = 0;
+            avePostsPerUser = 0;
+            aveCommentsPerUser = 0;
         }
 
         if (postsCount != 0) {
 
             aveCommentsPerPost = commentsCount / postsCount;
 
-            } else {
+        } else {
 
-                aveCommentsPerPost = 0;
+            aveCommentsPerPost = 0;
         }
 
         resultList.add(avePostsPerUser);

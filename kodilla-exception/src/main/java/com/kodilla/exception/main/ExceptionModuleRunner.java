@@ -6,7 +6,7 @@ import com.kodilla.exception.io.FileReaderWithoutHandling;
 
 public class ExceptionModuleRunner {
 
-    public static void main(String arg[]){
+    public static void main(String arg[]) {
 
         FileReader fileReader = new FileReader();
 
@@ -19,7 +19,6 @@ public class ExceptionModuleRunner {
 
 //        FileReaderWithoutHandling fileReaderWithoutHandling = new FileReaderWithoutHandling();
 //        fileReaderWithoutHandling.readFile();
-
 
 
     }

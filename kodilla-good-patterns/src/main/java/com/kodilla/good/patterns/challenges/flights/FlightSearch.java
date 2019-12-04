@@ -25,13 +25,13 @@ public class FlightSearch {
         return flightTo;
     }
 
-        public List<Flight> findFlightThrough(String departureCity, String city, String arrivalCity){
-            List<Flight> flightThrough = flightsRepository.getFlights().stream()
-                    .filter(flight -> flight.getDepartureCity().equals(departureCity))
-                    .filter(flight -> flight.getThroughCity().equals(city))
-                    .filter(flight -> flight.getArrivalCity().equals(arrivalCity))
-                    .collect(Collectors.toList());
-            System.out.println(flightThrough);
-            return flightThrough;
-        }
+    public List<Flight> findFlightThrough(String departureCity, String city, String arrivalCity) {
+        List<Flight> flightThrough = flightsRepository.getFlights().stream()
+                .filter(flight -> flight.getDepartureCity().equals(departureCity))
+                .filter(flight -> flight.getThroughCity().equals(city))
+                .filter(flight -> flight.getArrivalCity().equals(arrivalCity))
+                .collect(Collectors.toList());
+        System.out.println(flightThrough);
+        return flightThrough;
     }
+}

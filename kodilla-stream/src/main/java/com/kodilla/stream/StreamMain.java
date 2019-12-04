@@ -16,7 +16,7 @@ public class StreamMain {
         Map<Integer, ForumUser> theResultForum = forum.getUserList().stream()
                 .filter(forumUser -> forumUser.getGender() == 'M')
                 .filter(forumUser -> Period.between(forumUser.getDateOfBirth(), LocalDate.now()).getYears() >= 20)
-                .filter(forumUser -> forumUser.getNumberOfPosts() >0)
+                .filter(forumUser -> forumUser.getNumberOfPosts() > 0)
                 .collect(Collectors.toMap(ForumUser::getUserID, forumUser -> forumUser));
 
         theResultForum.entrySet().stream()
@@ -24,10 +24,6 @@ public class StreamMain {
                 .forEach(System.out::println);
     }
 }
-
-
-
-
 
 
 //        PoemBeautifier poemBeautifier = new PoemBeautifier();

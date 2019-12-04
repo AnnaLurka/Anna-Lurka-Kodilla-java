@@ -17,7 +17,7 @@ public class TaskList {
         return task;
     }
 
-    public void taskAdd(String task){
+    public void taskAdd(String task) {
         tasks.add(task);
     }
 }

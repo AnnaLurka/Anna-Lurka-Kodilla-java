@@ -8,7 +8,6 @@ public class Flight {
     private String arrivalCity;
 
 
-
     public Flight(String departureCity, String throughCity, String arrivalCity) {
         this.departureCity = departureCity;
         this.throughCity = throughCity;

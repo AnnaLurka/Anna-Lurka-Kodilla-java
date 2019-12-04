@@ -18,8 +18,8 @@ public final class Forum {
         listOfForumUsers.add(new ForumUser(108, "Heniu", 'M', 2019, 8, 5, 0));
     }
 
-    public ArrayList<ForumUser>getUserList(){
-        return new ArrayList<> (listOfForumUsers);
+    public ArrayList<ForumUser> getUserList() {
+        return new ArrayList<>(listOfForumUsers);
     }
 
 

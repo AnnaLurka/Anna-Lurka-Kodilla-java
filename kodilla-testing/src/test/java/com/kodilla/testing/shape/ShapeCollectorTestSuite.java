@@ -1,33 +1,34 @@
 package com.kodilla.testing.shape;
 
 import org.junit.*;
+
 import java.util.*;
 
 
 public class ShapeCollectorTestSuite {
 
     @Before
-    public void before(){
+    public void before() {
         System.out.println("Test Case: begin");
     }
 
     @After
-    public void after(){
+    public void after() {
         System.out.println("Test Case: end");
     }
 
     @BeforeClass
-    public static void beforeAllTests(){
+    public static void beforeAllTests() {
         System.out.println("This is the beginning of tests.");
     }
 
     @AfterClass
-    public static void afterAllTests(){
+    public static void afterAllTests() {
         System.out.println("This is the end of tests.");
     }
 
     @Test
-    public void testAddFigure(){
+    public void testAddFigure() {
         //Given
         ShapeCollector shapes = new ShapeCollector();
         Triangle triangle = new Triangle();
@@ -41,11 +42,11 @@ public class ShapeCollectorTestSuite {
         shapes.addFigure(square);
 
         //Then
-        Assert.assertEquals(3,shapes.getShapesQuantity());
+        Assert.assertEquals(3, shapes.getShapesQuantity());
     }
 
     @Test
-    public void testRemoveFigure(){
+    public void testRemoveFigure() {
         //Given
         ShapeCollector shapes = new ShapeCollector();
         Triangle triangle = new Triangle();
@@ -60,11 +61,11 @@ public class ShapeCollectorTestSuite {
         boolean result = shapes.removeFigure(square);
 
         //Then
-        Assert.assertEquals(2,shapes.getShapesQuantity());
+        Assert.assertEquals(2, shapes.getShapesQuantity());
     }
 
     @Test
-    public void testGetFigure(){
+    public void testGetFigure() {
         //Given
         ShapeCollector shapes = new ShapeCollector();
         Triangle triangle = new Triangle();
@@ -76,7 +77,7 @@ public class ShapeCollectorTestSuite {
         shapes.addFigure(square);
 
         //When
-        
+
         Shape retrievedFigure;
         retrievedFigure = shapes.getFigure(1);
 

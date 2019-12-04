@@ -21,10 +21,10 @@ public class CalculatorTestSuite {
         double a = 10;
         double b = 5;
         //When
-        double addition = calculator.add(a,b);
-        double subtraction = calculator.sub(a,b);
-        double multiplication = calculator.mul(a,b);
-        double division = calculator.div(a,b);
+        double addition = calculator.add(a, b);
+        double subtraction = calculator.sub(a, b);
+        double multiplication = calculator.mul(a, b);
+        double division = calculator.div(a, b);
         //Then
         Assert.assertEquals(15, addition, 0);
         Assert.assertEquals(5, subtraction, 0);

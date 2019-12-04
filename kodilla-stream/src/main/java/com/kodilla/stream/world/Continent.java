@@ -12,10 +12,10 @@ public final class Continent {
         this.countries = countries;
     }
 
-        public List<Country> getCountries () {
-            return countries;
-        }
+    public List<Country> getCountries() {
+        return countries;
     }
+}
 
 
 

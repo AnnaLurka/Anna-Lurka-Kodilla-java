@@ -13,7 +13,7 @@ public class StatisticsCalculatorTestSuite {
 
     private List<String> generateListOfNNames(int namesQuantity) {
         List<String> resultList = new ArrayList<String>();
-        for(int n = 1; n <= namesQuantity; n++){
+        for (int n = 1; n <= namesQuantity; n++) {
             String name = "name " + n;
             resultList.add(name);
         }
@@ -46,6 +46,7 @@ public class StatisticsCalculatorTestSuite {
         //Then
         Assert.assertEquals(statisticsList0Posts, list0Posts);
     }
+
     @Test
     public void testCalculateAdvStatistics1000Posts() {
         //Given
@@ -126,6 +127,7 @@ public class StatisticsCalculatorTestSuite {
         //Then
         Assert.assertEquals(statisticsListCommentsLessThanPosts, listCommentsLessThanPosts);
     }
+
     @Test
     public void testCalculateAdvStatisticsCommentsMoreThanPosts() {
         //Given
@@ -136,7 +138,7 @@ public class StatisticsCalculatorTestSuite {
 
         ArrayList<Double> statisticsListCommentsMoreThanPosts = new ArrayList<Double>();
         double avePostsPerUser = 10.00;
-        double aveCommentsPerUser = 20.00 ;
+        double aveCommentsPerUser = 20.00;
         double aveCommentsPerPost = 2.00;
         statisticsListCommentsMoreThanPosts.add(avePostsPerUser);
         statisticsListCommentsMoreThanPosts.add(aveCommentsPerUser);
@@ -152,6 +154,7 @@ public class StatisticsCalculatorTestSuite {
         //Then
         Assert.assertEquals(statisticsListCommentsMoreThanPosts, listCommentsMoreThanPosts);
     }
+
     @Test
     public void testCalculateAdvStatistics0Users() {
         //Given
@@ -178,6 +181,7 @@ public class StatisticsCalculatorTestSuite {
         //Then
         Assert.assertEquals(statisticsList0Users, list0Users);
     }
+
     @Test
     public void testCalculateAdvStatistics100Users() {
         //Given

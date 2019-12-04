@@ -59,7 +59,6 @@ public final class ForumUser {
     }
 
 
-
     public void addFriend(ForumUser user) {
         friends.add(user);
     }
@@ -67,7 +66,6 @@ public final class ForumUser {
     public boolean removeFriend(ForumUser user) {
         return friends.remove(user);
     }
-
 
 
     public Set<String> getLocationsOfFriends() {
