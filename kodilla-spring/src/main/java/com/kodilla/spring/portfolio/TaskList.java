@@ -6,15 +6,13 @@ import java.util.List;
 public class TaskList {
 
     private List<String> tasks;
-    String task;
-
 
     public TaskList() {
         tasks = new ArrayList<>();
     }
 
-    public String getTask() {
-        return task;
+    public List<String> getTasks() {
+        return tasks;
     }
 
     public void taskAdd(String task) {
