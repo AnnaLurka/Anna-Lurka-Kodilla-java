@@ -41,10 +41,5 @@ public class LibraryTestSuite {
         Assert.assertEquals(3, library.getBooks().size());
         Assert.assertEquals(3, shallowClonedLibrary.getBooks().size());
         Assert.assertEquals(3, deepClonedLibrary.getBooks().size());
-        Assert.assertEquals(shallowClonedLibrary.getBooks(), library.getBooks());
-        Assert.assertEquals(deepClonedLibrary.getBooks(), library.getBooks());
-
-
     }
 }
-//        Zmodyfikuj test testGetBooks() w taki sposób, aby prezentował działanie shallowCopy() oraz deepCopy().
