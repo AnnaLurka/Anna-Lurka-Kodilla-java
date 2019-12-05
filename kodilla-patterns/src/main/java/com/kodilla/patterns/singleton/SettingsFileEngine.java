@@ -28,7 +28,7 @@ public final class SettingsFileEngine {
     }
 
     public void close() {
-        this.fileName = "";
+        this.fileName = ""; //fileName = "";
         System.out.println("Closing the settings file");
     }
 
