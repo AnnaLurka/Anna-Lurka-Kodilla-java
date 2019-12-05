@@ -8,7 +8,7 @@ import java.time.LocalDate;
 public class LibraryTestSuite {
 
     @Test
-    public void testGetBooks() {
+    public void testGetBooks () throws CloneNotSupportedException {
         //Given
         Library library = new Library("My library");
         Book book1 = new Book("Robinson Crusoe", "Daniel Defoe", LocalDate.of(1719, 01, 01));
@@ -19,27 +19,19 @@ public class LibraryTestSuite {
         library.getBooks().add(book3);
 
         Library shallowClonedLibrary = null;
-        try {
-            shallowClonedLibrary = library.shallowCopy();
-            shallowClonedLibrary.setName("Your shallow library");
-        } catch (CloneNotSupportedException e) {
-            System.out.println(e);
-        }
+        shallowClonedLibrary = library.shallowCopy();
+        shallowClonedLibrary.setName("Your shallow library");
 
         Library deepClonedLibrary = null;
-        try {
-            deepClonedLibrary = library.deepCopy();
-            deepClonedLibrary.setName("Your deep library");
-        } catch (CloneNotSupportedException e) {
-            System.out.println(e);
-        }
+        deepClonedLibrary = library.deepCopy();
+        deepClonedLibrary.setName("Your deep library");
+
         //When
+        library.getBooks().add(new Book("Czesław Miłosz", "Wiersze", LocalDate.of(1940, 01, 01)));
+
         //Then
-        System.out.println(library);
-        System.out.println(shallowClonedLibrary);
-        System.out.println(deepClonedLibrary);
-        Assert.assertEquals(3, library.getBooks().size());
-        Assert.assertEquals(3, shallowClonedLibrary.getBooks().size());
+        Assert.assertEquals(4, library.getBooks().size());
+        Assert.assertEquals(4, shallowClonedLibrary.getBooks().size());
         Assert.assertEquals(3, deepClonedLibrary.getBooks().size());
     }
 }
