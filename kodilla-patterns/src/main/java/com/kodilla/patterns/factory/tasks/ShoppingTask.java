@@ -1,8 +1,5 @@
 package com.kodilla.patterns.factory.tasks;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public final class ShoppingTask implements Task{
 
     final String taskName;
@@ -30,14 +27,10 @@ public final class ShoppingTask implements Task{
 
     @Override
     public boolean isTaskExecuted() {
-        List<String> itemsBought = new ArrayList<>();
-        List<String> itemsNotBought = new ArrayList<>();
 
         if(taskExecuted) {
-            itemsBought.add(taskName);
             return true;
         } else {
-            itemsNotBought.add(taskName);
             return false;
         }
     }

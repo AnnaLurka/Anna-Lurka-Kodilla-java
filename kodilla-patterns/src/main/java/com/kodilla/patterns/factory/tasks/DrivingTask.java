@@ -1,8 +1,5 @@
 package com.kodilla.patterns.factory.tasks;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public final class DrivingTask implements Task{
 
     final String taskName;
@@ -31,14 +28,9 @@ public final class DrivingTask implements Task{
     @Override
     public boolean isTaskExecuted() {
 
-        List<String> missionAccomplished = new ArrayList<>();
-        List<String> missionNotAccomplished = new ArrayList<>();
-
         if(taskExecuted) {
-            missionAccomplished.add(taskName);
             return true;
         } else {
-            missionNotAccomplished.add(taskName);
             return false;
         }
     }
