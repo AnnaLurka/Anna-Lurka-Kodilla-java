@@ -1,0 +1,44 @@
+package com.kodilla.patterns.factory.tasks;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public final class ShoppingTask implements Task{
+
+    final String taskName;
+    final String whatToBuy;
+    final double quantity;
+    boolean taskExecuted;
+
+    public ShoppingTask(final String taskName, final String whatToBuy, final double quantity) {
+        this.taskName = taskName;
+        this.whatToBuy = whatToBuy;
+        this.quantity = quantity;
+    }
+
+    @Override
+    public String getTaskName(){
+        return taskName;
+    }
+
+    @Override
+    public String executeTask(){
+        System.out.println("Executing Shopping Task.");
+        taskExecuted = true;
+        return "Buying " + quantity + " " + whatToBuy + ".";
+    }
+
+    @Override
+    public boolean isTaskExecuted() {
+        List<String> itemsBought = new ArrayList<>();
+        List<String> itemsNotBought = new ArrayList<>();
+
+        if(taskExecuted) {
+            itemsBought.add(taskName);
+            return true;
+        } else {
+            itemsNotBought.add(taskName);
+            return false;
+        }
+    }
+}
