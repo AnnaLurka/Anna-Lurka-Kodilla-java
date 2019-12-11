@@ -12,7 +12,7 @@ public final class Bigmac {
 
     public static class BigmacBuilder {
 
-         String bun;
+        private String bun;
         private int burgers;
         private String sauce;
         private List<String> ingredients = new ArrayList<>();
