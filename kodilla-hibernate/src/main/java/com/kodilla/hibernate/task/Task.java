@@ -15,13 +15,13 @@ import java.util.Date;
                 query = "FROM Task WHERE duration <= 10"
         ),
         @NamedQuery(
-                name = "Task.retrieveTasksWithDurationLongerThen",
+                name = "Task.retrieveTasksWithDurationLongerThen",//
                 query = "FROM Task WHERE duration > :DURATION"
         )
 })
 @NamedNativeQuery(
-        name = "Task.retrieveTaskssWithEnoughTime",
-        query = "SELECT FROM TASK" +
+        name = "Task.retrieveTasksWithEnoughTime",
+        query = "SELECT * FROM TASKS" +
                 " WHERE DATEDIFF(DATE_ADD(CREATED, INTERVAL DURATION DAY), NOW()) > 5",
         resultClass = Task.class
 )
@@ -71,7 +71,7 @@ public final class Task {
     }
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "TASK_FINANCIALS_ID")
+    @JoinColumn(name = "TASK_FINANCIALS_ID")//
     public TaskFinancialDetails getTaskFinancialDetails() {
         return taskFinancialDetails;
     }
