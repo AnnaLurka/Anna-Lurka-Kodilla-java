@@ -9,9 +9,12 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
+import javax.transaction.Transactional;
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
+@Transactional
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class InvoiceDaoTestSuite {
@@ -23,30 +26,44 @@ public class InvoiceDaoTestSuite {
     public void testInvoiceDaoSave() {
 
         //Given
-        Item item1 = new Item(new BigDecimal(50000), 2);
-        Item item2 = new Item(new BigDecimal(2000), 3);
+        Invoice invoice1 = new Invoice("17");
+
         Product product1 = new Product("car");
         Product product2 = new Product("bike");
-        item1.setProduct(product1);
-        item2.setProduct(product2);
+        Product product3 = new Product("scooter");
 
-//        Invoice invoice1 = new Invoice("17");
-//        invoice1.getItems().add(item1);
-//        invoice1.getItems().add(item2);
-//        item1.setInvoice(invoice1);
-//        item2.setInvoice(invoice1);
-//
-//        productDao.save(product1); ??
-//        item2.setProduct(product1); ??
-//
-//        //When
-//        invoiceDao.save(invoice1);
-//        int invoiceId = invoice1.getId();
-//
-//        //Then
-//        Assert.assertNotEquals(0, id);
-//
-//        //CleanUp
-//        invoiceDao.deletById(invoiceId);
+        Item item1 = new Item(product1, new BigDecimal(50000), 2);
+        Item item2 = new Item(product2, new BigDecimal(2000), 3);
+        Item item3 = new Item(product3, new BigDecimal(500), 4);
+
+        item1.setInvoice(invoice1);
+        item2.setInvoice(invoice1);
+        item3.setInvoice(invoice1);
+
+        List<Item> items = new ArrayList<>();
+        items.add(item1);
+        items.add(item2);
+        items.add(item3);
+
+        invoice1.setItems(items);
+
+        //When
+        invoiceDao.save(invoice1);
+        int invoiceId = invoice1.getId();
+        int itemSize = invoice1.getItems().size();
+
+        Invoice invoiceFromDB = invoiceDao.findById(invoiceId);
+
+        //Then
+        Assert.assertEquals(invoiceId, invoiceFromDB.getId());
+        Assert.assertEquals(3, itemSize);
+        Assert.assertEquals(itemSize, invoiceFromDB.getItems().size());
+
+        //CleanUp
+        try {
+            invoiceDao.deleteById(invoiceId);
+        } catch (Exception e) {
+        }
     }
 }
+

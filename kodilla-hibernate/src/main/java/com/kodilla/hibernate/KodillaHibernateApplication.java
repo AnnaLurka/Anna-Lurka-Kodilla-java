@@ -8,3 +8,4 @@ public class KodillaHibernateApplication {
         SpringApplication.run(KodillaHibernateApplication.class, args);
     }
 }
+

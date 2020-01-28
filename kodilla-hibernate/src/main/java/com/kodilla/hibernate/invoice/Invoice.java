@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "INVOICE")
+@Table(name = "INVOICES")
 public class Invoice {
 
     private int id;
@@ -17,7 +17,12 @@ public class Invoice {
 
     }
 
-    public Invoice(String number) {
+    public Invoice(String number, List<Item> items) {
+        this.number = number;
+        this.items = items;
+    }
+
+    public Invoice (String number){
         this.number = number;
     }
 
@@ -41,6 +46,7 @@ public class Invoice {
             cascade = CascadeType.ALL,
             fetch = FetchType.LAZY
     )
+    @Column(name = "ITEM_ID", nullable = false)
     public List<Item> getItems() {
         return items;
     }
