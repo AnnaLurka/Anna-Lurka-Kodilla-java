@@ -51,6 +51,7 @@ public class InvoiceDaoTestSuite {
         invoiceDao.save(invoice1);
         int invoiceId = invoice1.getId();
         int itemSize = invoice1.getItems().size();
+        List<Item> invoice1Items = invoice1.getItems();
 
         Invoice invoiceFromDB = invoiceDao.findById(invoiceId);
 
@@ -58,6 +59,7 @@ public class InvoiceDaoTestSuite {
         Assert.assertEquals(invoiceId, invoiceFromDB.getId());
         Assert.assertEquals(3, itemSize);
         Assert.assertEquals(itemSize, invoiceFromDB.getItems().size());
+        Assert.assertEquals(invoice1Items, invoice1.getItems());
 
         //CleanUp
         try {
