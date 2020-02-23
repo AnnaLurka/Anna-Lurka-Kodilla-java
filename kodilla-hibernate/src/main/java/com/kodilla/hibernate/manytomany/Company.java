@@ -5,6 +5,11 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+@NamedQuery(
+        name = "Company.retrieveCompaniesWithFragm",
+        query = "FROM Company WHERE name LIKE :%FRAGM%"
+)
+
 @NamedNativeQuery(
         name = "Company.retrieveCompanyStartingWith",
         query = "SELECT * FROM COMPANIES" +

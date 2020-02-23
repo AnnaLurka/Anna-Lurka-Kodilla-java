@@ -20,7 +20,7 @@ public class CompanyDaoTestSuite {
     EmployeeDao employeeDao;
 
     @Test
-    public void testSaveManyToMany(){
+    public void testSaveManyToMany() {
         //Given
         Employee johnSmith = new Employee("John", "Smith");
         Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
@@ -63,7 +63,7 @@ public class CompanyDaoTestSuite {
         } catch (Exception e) {
             //do nothing
         }
-         }
+    }
 
     @Test
     public void retrieveEmployeesWithName() {
@@ -141,11 +141,11 @@ public class CompanyDaoTestSuite {
         int greyMatterId = greyMatter.getId();
 
         //Then
-        Assert.assertEquals(1, companyStartingWithSof .size());
+        Assert.assertEquals(1, companyStartingWithSof.size());
 
         //CleanUp
         companyDao.deleteById(softwareMachineId);
         companyDao.deleteById(dataMaestersId);
         companyDao.deleteById(greyMatterId);
     }
-    }
+}

@@ -6,9 +6,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 @NamedQuery(
-                name = "Employee.retrieveEmployeesWithName",
-                query = "FROM Employee WHERE lastname = :LASTNAME"
-        )
+        name = "Employee.retrieveEmployeesWithFragm",
+        query = "FROM Employee WHERE lastname LIKE = :%FRAGM%"
+)
+
+@NamedQuery(
+        name = "Employee.retrieveEmployeesWithName",
+        query = "FROM Employee WHERE lastname = :LASTNAME"
+)
 
 @Entity
 @Table(name = "EMPLOYEES")
@@ -55,15 +60,19 @@ public class Employee {
     public List<Company> getCompanies() {
         return companies;
     }
+
     private void setId(int id) {
         this.id = id;
     }
+
     private void setFirstname(String firstname) {
         this.firstname = firstname;
     }
+
     private void setLastname(String lastname) {
         this.lastname = lastname;
     }
+
     public void setCompanies(List<Company> companies) {
         this.companies = companies;
     }
