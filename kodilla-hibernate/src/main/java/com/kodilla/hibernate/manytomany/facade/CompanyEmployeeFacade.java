@@ -18,11 +18,11 @@ public final class CompanyEmployeeFacade {
     @Autowired
     private EmployeeDao employeeDao;
 
-    public List<Company> findCompaniesByFragm(String fragm) {
-        return companyDao.retrieveCompaniesWithFragm(fragm);
+    public List<Company> findCompaniesByFragm(String name) {
+        return companyDao.retrieveCompaniesWithFragm(name);
     }
 
-    public List<Employee> findEmployeesByFragm(String fragm) {
-        return employeeDao.retrieveEmployeesWithFragm(fragm);
+    public List<Employee> findEmployeesByFragm(String lastname) {
+        return employeeDao.retrieveEmployeesWithFragm(lastname);
     }
 }
