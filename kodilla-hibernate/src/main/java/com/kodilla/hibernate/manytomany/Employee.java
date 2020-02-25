@@ -5,15 +5,16 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-@NamedQuery(
+@NamedQueries({@NamedQuery(
         name = "Employee.retrieveEmployeesWithFragm",
         query = "FROM Employee WHERE lastname LIKE :FRAGM"
-)
+),
 
-@NamedQuery(
-        name = "Employee.retrieveEmployeesWithName",
-        query = "FROM Employee WHERE lastname = :LASTNAME"
-)
+        @NamedQuery(
+                name = "Employee.retrieveEmployeesWithName",
+                query = "FROM Employee WHERE lastname = :LASTNAME"
+        )})
+
 
 @Entity
 @Table(name = "EMPLOYEES")

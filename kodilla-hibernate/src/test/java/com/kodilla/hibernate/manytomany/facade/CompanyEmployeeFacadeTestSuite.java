@@ -14,7 +14,7 @@ import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class CompanyEmploeeFacadeTestSuite {
+public class CompanyEmployeeFacadeTestSuite {
     @Autowired
     private CompanyEmployeeFacade companyEmployeeFacade;
     @Autowired
@@ -49,11 +49,13 @@ public class CompanyEmploeeFacadeTestSuite {
         companyDao.save(dataMaesters);
         companyDao.save(greyMatter);
 
+
         //When
         List<Company> companiesWithFragm = companyEmployeeFacade.findCompaniesByFragm("Ma");
         int softwareMachineId = softwareMachine.getId();
         int dataMaestersId = dataMaesters.getId();
         int greyMatterId = greyMatter.getId();
+
 
         //Then
         Assert.assertEquals(3, companiesWithFragm.size());
