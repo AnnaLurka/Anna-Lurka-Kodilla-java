@@ -107,10 +107,5 @@ public class CompanyEmployeeFacadeTestSuite {
         employeeDao.deleteById(stephanieClarcksonId);
         employeeDao.deleteById(lindaKovalskyId);
     }
-
-
-
-
-
 }
 
