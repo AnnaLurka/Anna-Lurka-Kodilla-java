@@ -49,13 +49,11 @@ public class CompanyEmployeeFacadeTestSuite {
         companyDao.save(dataMaesters);
         companyDao.save(greyMatter);
 
-
         //When
         List<Company> companiesWithFragm = companyEmployeeFacade.findCompaniesByFragm("Ma");
         int softwareMachineId = softwareMachine.getId();
         int dataMaestersId = dataMaesters.getId();
         int greyMatterId = greyMatter.getId();
-
 
         //Then
         Assert.assertEquals(3, companiesWithFragm.size());
@@ -64,6 +62,7 @@ public class CompanyEmployeeFacadeTestSuite {
         companyDao.deleteById(softwareMachineId);
         companyDao.deleteById(dataMaestersId);
         companyDao.deleteById(greyMatterId);
+
     }
 
     @Test
@@ -77,24 +76,22 @@ public class CompanyEmployeeFacadeTestSuite {
         Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
         Employee lindaKovalsky = new Employee("Linda", "Kovalsky");
 
-        softwareMachine.getEmployees().add(johnSmith);
-        dataMaesters.getEmployees().add(stephanieClarckson);
-        dataMaesters.getEmployees().add(lindaKovalsky);
-        greyMatter.getEmployees().add(johnSmith);
-        greyMatter.getEmployees().add(lindaKovalsky);
+        Employee saveJohnSmith = employeeDao.save(johnSmith);
+        Employee saveStephanieClarckson = employeeDao.save(stephanieClarckson);
+        Employee saveLindaKovalsky = employeeDao.save(lindaKovalsky);
 
-        johnSmith.getCompanies().add(softwareMachine);
-        johnSmith.getCompanies().add(greyMatter);
-        stephanieClarckson.getCompanies().add(dataMaesters);
-        lindaKovalsky.getCompanies().add(dataMaesters);
-        lindaKovalsky.getCompanies().add(greyMatter);
+        softwareMachine.getEmployees().add(saveJohnSmith);
+        dataMaesters.getEmployees().add(saveStephanieClarckson);
+        dataMaesters.getEmployees().add(saveLindaKovalsky);
+        greyMatter.getEmployees().add(saveJohnSmith);
+        greyMatter.getEmployees().add(saveLindaKovalsky);
 
-        employeeDao.save(johnSmith);
-        employeeDao.save(stephanieClarckson);
-        employeeDao.save(lindaKovalsky);
+        companyDao.save(softwareMachine);
+        companyDao.save(dataMaesters);
+        companyDao.save(greyMatter);
 
         //When
-        List<Employee> employeesWithFragm = companyEmployeeFacade.findEmployeesByFragm("joh");
+        List<Employee> employeesWithFragm = companyEmployeeFacade.findEmployeesByFragm("Smi");
         int johnSmithId = johnSmith.getId();
         int stephanieClarcksonId = stephanieClarckson.getId();
         int lindaKovalskyId = lindaKovalsky.getId();
