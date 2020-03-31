@@ -76,19 +76,33 @@ public class CompanyEmployeeFacadeTestSuite {
         Employee stephanieClarckson = new Employee("Stephanie", "Clarckson");
         Employee lindaKovalsky = new Employee("Linda", "Kovalsky");
 
-        Employee saveJohnSmith = employeeDao.save(johnSmith);
-        Employee saveStephanieClarckson = employeeDao.save(stephanieClarckson);
-        Employee saveLindaKovalsky = employeeDao.save(lindaKovalsky);
 
-        softwareMachine.getEmployees().add(saveJohnSmith);
-        dataMaesters.getEmployees().add(saveStephanieClarckson);
-        dataMaesters.getEmployees().add(saveLindaKovalsky);
-        greyMatter.getEmployees().add(saveJohnSmith);
-        greyMatter.getEmployees().add(saveLindaKovalsky);
+        softwareMachine.getEmployees().add(johnSmith);
+        dataMaesters.getEmployees().add(stephanieClarckson);
+        dataMaesters.getEmployees().add(lindaKovalsky);
+        greyMatter.getEmployees().add(johnSmith);
+        greyMatter.getEmployees().add(lindaKovalsky);
+
+        johnSmith.getCompanies().add(softwareMachine);
+        johnSmith.getCompanies().add(greyMatter);
+        stephanieClarckson.getCompanies().add(dataMaesters);
+        lindaKovalsky.getCompanies().add(dataMaesters);
+        lindaKovalsky.getCompanies().add(greyMatter);
 
         companyDao.save(softwareMachine);
         companyDao.save(dataMaesters);
         companyDao.save(greyMatter);
+
+//        Employee saveJohnSmith = employeeDao.save(johnSmith);
+//        Employee saveStephanieClarckson = employeeDao.save(stephanieClarckson);
+//        Employee saveLindaKovalsky = employeeDao.save(lindaKovalsky);
+//
+//        softwareMachine.getEmployees().add(saveJohnSmith);
+//        dataMaesters.getEmployees().add(saveStephanieClarckson);
+//        dataMaesters.getEmployees().add(saveLindaKovalsky);
+//        greyMatter.getEmployees().add(saveJohnSmith);
+//        greyMatter.getEmployees().add(saveLindaKovalsky);
+
 
         //When
         List<Employee> employeesWithFragm = companyEmployeeFacade.findEmployeesByFragm("Smi");

@@ -7,7 +7,7 @@ import java.util.List;
 
 @NamedQuery(
         name = "Company.retrieveCompaniesWithFragm",
-        query = "FROM Company WHERE name LIKE :FRAGM"
+        query = "FROM Company WHERE COMPANY_NAME LIKE :FRAGM"
 )
 
 @NamedNativeQuery(
