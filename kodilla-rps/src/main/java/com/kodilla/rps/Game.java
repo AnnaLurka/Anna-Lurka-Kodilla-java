@@ -78,18 +78,22 @@ public class Game {
 
     public void handleGameEnd() {
         System.out.println("What would you like to do next?");
-        System.out.println("Press X if you want to quit the game. Press N if you want to start a new game.");
-        if(scanner.next().equals("X")) {
+        System.out.println("Press X if you want to quit the game. Press NG if you want to start a new game.");
+        String result = scanner.next();
+        if(result.equals("X")) {
             System.out.println("Are you sure you want to quit the game? Press Y for yes. Press N for no");
-            if (scanner.next().equals("Y")) {
+            String result1 = scanner.next();
+            if(result1.equals("Y")) {
                 System.out.println("This is the end. Bye, bye!");
-            } else if(scanner.next().equals("N")) {
+            } else if(result1.equals("N")) {
                 startANewGame();
+            } else {
+                System.out.println("Press Y or N.");
             }
-        } else if(scanner.next().equals("N")) {
+        } else if(result.equals("NG")) {
             startANewGame();
         } else {
-            System.out.println("Press Y or N.");
+            System.out.println("Press Y or NG.");
         }
     }
 }
