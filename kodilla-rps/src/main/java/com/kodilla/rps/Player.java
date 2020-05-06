@@ -23,7 +23,7 @@ public class Player {
         }
     }
 
-    public void playerMoves() {
+    public void move() {
         System.out.println("Make your move.");
         System.out.println("Press 1 to choose rock.");
         System.out.println("Press 2 to choose paper.");

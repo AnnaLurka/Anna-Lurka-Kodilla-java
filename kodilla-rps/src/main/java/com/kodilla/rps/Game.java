@@ -8,60 +8,53 @@ public class Game {
     private Round round = new Round();
     private Scanner scanner = new Scanner(System.in);
 
-    private boolean playerWins = false;
-    private boolean computerWins = false;
     private int playerCounter = 0;
     private int computerCounter = 0;
 
 
     public void startANewGame() {
+
+        System.out.println("A new game!");
+        player.setName();
+        round.setRequiredWins();
+
         boolean end = false;
 
         while (!end) {
-            System.out.println("A new game!");
-            player.setName();
-            round.setRequiredWins();
-            player.playerMoves();
-            computer.computerMoves();
-            whoWinsTheRound();
+            player.move();
+            computer.move();
+            getRoundWinner();
             System.out.println("Computer's score is " + computerCounter);
             System.out.println(player.getPlayerName() + "'s score is " + playerCounter);
-            isGameOver();
             if(isGameOver()) {
                 end = true;
             }
-            afterTheGame();
         }
+        handleGameEnd();
     }
 
-    public void whoWinsTheRound() {
+    public void getRoundWinner() {
         if ((player.getPlayersChoice() == 1) && (computer.getComputersChoice() == 3)) {
-            playerWins = true;
             playerCounter++;
             System.out.println("Rock crushes scissors");
             System.out.println(player.getPlayerName() + " has won the round!");
         } else if ((player.getPlayersChoice() == 1) && (computer.getComputersChoice() == 2)) {
-            computerWins = true;
             computerCounter++;
             System.out.println("Paper covers rock");
             System.out.println("Computer has won the round!");
         } else if ((player.getPlayersChoice() == 3) && (computer.getComputersChoice() == 2)) {
-            playerWins = true;
             playerCounter++;
             System.out.println("Scissors cut paper");
             System.out.println(player.getPlayerName() + " has won the round!");
         } else if ((player.getPlayersChoice() == 3) && (computer.getComputersChoice() == 1)) {
-            computerWins = true;
             computerCounter++;
             System.out.println("Rock crushes scissors!");
             System.out.println("Computer has won the round!");
         } else if ((player.getPlayersChoice() == 2) && (computer.getComputersChoice() == 1)) {
-            playerWins = true;
             playerCounter++;
             System.out.println("Paper covers rock");
             System.out.println(player.getPlayerName() + " has won!");
         } else if ((player.getPlayersChoice() == 2) && (computer.getComputersChoice() == 3)) {
-            computerWins = true;
             computerCounter++;
             System.out.println("Scissors cut paper");
             System.out.println("Computer has won the round!");
@@ -83,16 +76,20 @@ public class Game {
         return false;
     }
 
-    public void afterTheGame() {
+    public void handleGameEnd() {
         System.out.println("What would you like to do next?");
         System.out.println("Press X if you want to quit the game. Press N if you want to start a new game.");
-        if (scanner.next().equals("X")) {
+        if(scanner.next().equals("X")) {
             System.out.println("Are you sure you want to quit the game? Press Y for yes. Press N for no");
             if (scanner.next().equals("Y")) {
                 System.out.println("This is the end. Bye, bye!");
-            } else if (scanner.next().equals("N")) {
+            } else if(scanner.next().equals("N")) {
                 startANewGame();
             }
+        } else if(scanner.next().equals("N")) {
+            startANewGame();
+        } else {
+            System.out.println("Press Y or N.");
         }
     }
 }
