@@ -7,7 +7,7 @@ public class Computer {
     Random random = new Random();
 
     public void move() {
-        computersChoice = random.nextInt(2) + 1;
+        computersChoice = random.nextInt(3) + 1;
 
         if (computersChoice == 1) {
             System.out.println("Computer has chosen rock.");
